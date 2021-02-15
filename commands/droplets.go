@@ -82,8 +82,7 @@ func Droplet() *Command {
 	AddBoolFlag(cmdDropletCreate, doctl.ArgIPv6, "", false, "Enables IPv6 support and assigns an IPv6 address")
 	AddBoolFlag(cmdDropletCreate, doctl.ArgPrivateNetworking, "", false, "Enables private networking for the Droplet by provisioning it inside of your account's default VPC for the region")
 	AddBoolFlag(cmdDropletCreate, doctl.ArgMonitoring, "", false, "Install the DigitalOcean agent for additional monitoring")
-	AddStringFlag(cmdDropletCreate, doctl.ArgImage, "", "", "An ID or slug indicating the image the Droplet will be based-on (e.g. `ubuntu-20-04-x64`). Use the commands under `doctl compute image` to find additional images.",
-		requiredOpt())
+	AddStringFlag(cmdDropletCreate, doctl.ArgImage, "", "ubuntu-20-04-x64", "An ID or slug indicating the image the Droplet will be based-on (e.g. `ubuntu-20-04-x64`). Use the commands under `doctl compute image` to find additional images.")
 	AddStringFlag(cmdDropletCreate, doctl.ArgTagName, "", "", "A tag name to be applied to the Droplet")
 	AddStringFlag(cmdDropletCreate, doctl.ArgVPCUUID, "", "", "The UUID of a non-default VPC to create the Droplet in")
 	AddStringSliceFlag(cmdDropletCreate, doctl.ArgTagNames, "", []string{}, "A list of tag names to be applied to the Droplet")
